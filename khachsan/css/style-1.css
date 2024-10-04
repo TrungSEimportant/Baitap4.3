@@ -413,14 +413,15 @@ button .menu{
 }
 .logo{
 background: none;
-    width: 200px;
+    width: 100px;
     margin-right: 5rem;
 }
 .headd{
-    background: white;
+    background: black;
 }
 .logo img{
-    width: 100%;
+    width: 100px;
+
 }
 .search input{
     border-radius: 20px;
@@ -436,13 +437,13 @@ background: none;
 }
 
 .header nav ul li a{
-    color: black;
+    color: white;
     /* font-weight: 1000; */
 border-bottom: 1px rgba(0, 0, 0, 0) solid;
 
 }
 .header nav ul li:hover a{
-border-bottom: 1px black solid;
+border-bottom: 1px white solid;
 }
 
 .product span{
@@ -459,14 +460,14 @@ border-bottom: 1px black solid;
 
 
 .footer-3{
-    background: rgb(245, 243, 243);
+    background: #222;
     padding: 1rem;
 }
 
 
 .footer-3 ul li{
     margin-top: 0.5rem;
-
+    
 }
 .link-support ul li, .link-support ul li a{
     font-size: 12.5px;
@@ -474,7 +475,7 @@ border-bottom: 1px black solid;
 }
 .link-support ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .link-support ul li:hover a{
     color: brown;
@@ -537,4 +538,10 @@ border-bottom: 1px black solid;
 .total{
     font-size: 150%;
     color: red;
+}
+.h612{
+    color: #ccc;
+}
+.h12{
+    color: #000;
 }
