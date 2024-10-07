@@ -1,52 +1,47 @@
     var product = [
         {
-            class:"SP1",
+            id:"SP1",
             name:"Family room with sea view",
-            img : "s11.jpg",
-            price:"1.200.000 VND",
+            img : "Fam2_sea.jpg",
+            price:"1.200.000",
         },
         {
             id:"SP2",
             name:"Double room with sea view",
-            img : "s12.jpg",
-            price:"700.000 VND",
+            img : "Double_sea.jpg",
+            price:"700.000",
         },
         {
             id:"SP3",
             name:"Triple room with sea view",
-            img : "s13.jpg",
-            price:"900.000 VND",
+            img : "Triple2_sea.jpg",
+            price:"900.000",
         },
         {
             id:"SP4",
-            name:"Double room",
-            img : "s14.jpg",
-            price:"300.000 VND",
+            name:"Double room (For two people)",
+            img : "Double2.jpg",
+            price:"500.000",
         },
         {
             id:"SP5",
             name:"Superior room",
-            img : "s21.jpg",
-            price:"500.000 VND",
+            img : "Sup.webp",
+            price:"300.000",
         },
         {
             id:"SP6",
             name:"Stand Apartment",
-            img : "s22.jpg",
-            price:"2.400.000 VND / 1 month",
+            img : "Stand_AP.jpg",
+            price:"2.400.000 ",
         },
         {
             id:"SP7",
             name:"Deluxe Apartment",
-            img : "s23.jpg",
-            price:"5.000.000 VND / 1 month",
+            img : "Deluxe_AP.jpg",
+            price:"5.000.000 ",
         },
-        {
-            id:"SP8",
-            name:"V.I.P ",
-            img : "s24.jpg",
-            price:"3.000.000 VND",
-        },
+        
     ];
 // đẩy mảng product vào local
     function Save(){
@@ -61,29 +56,42 @@
     load();
 }
 Save();
-   var listLocal = function(){
-       var listproduct ="";
-       for (var i in product){
-           var data = JSON.parse(JSON.stringify(product[i]))
-        var listproduct = '<div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-3">';
-        listproduct += '<div class="card product p-2" styte="width:auto">'; 
-        listproduct += '<img class="card-img-top" src="img/' + data.img +'" alt="...">';
-        listproduct += '<div class="card-title product-title text-center h5" >'+data.name+'</div>';
-        listproduct += '<div class="price text-center h6">'+data.price+'₫</div>';
-        listproduct +=  '<span class="text-center add-to-cart btn btn-outline-warning add-cart" data-id="'+data.id+'" data-name="'+data.name+'" data-img="'+data.img+'" data-price="'+data.price+'" onclick="tks()">';
-        // listproduct +=  '<a class=" add-to-cart btn" data-name="'+product[i].name+'" data-price="'+product[i].price+'" onclick="tks()">';
-        listproduct +=  '<a>';
-        listproduct +=  '<i class="fas fa-cart-plus"></i>';
-        listproduct +=  '</a>';
-        listproduct +=  '</span>';
+var listLocal = function() {
+    var listproduct = "";
+    for (var i in product) {
+        var data = JSON.parse(JSON.stringify(product[i]));
+        listproduct = '<div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-3">';
+        listproduct += '<div class="card product p-2" style="width:auto">';
+        listproduct += '<img class="card-img-top" src="img/' + data.img + '" alt="...">';
+        listproduct += '<div class="card-title product-title text-center h5">' + data.name + '</div>';
+        listproduct += '<div class="price text-center h6">' + data.price + ' VND</div>';
+        listproduct += '<span class="text-center add-to-cart btn btn-outline-warning add-cart" ';
+        // Add hiện thông báo cửa sổ
+        listproduct += 'data-id="'+data.id+'" data-name="'+data.name+'" data-img="'+data.img+'" data-price="'+data.price+'" ';
+        listproduct += 'onclick="tks(\'' + data.name + '\')">';
+        listproduct += '<a>';
+        listproduct += '<i class="fas fa-cart-plus"></i>';
+        listproduct += '</a>';
+        listproduct += '</span>';
+        //Add nút chi tiết
+        listproduct += '<div class="text-center">';
+        
+        // 'Chi tiết' button
+        listproduct += '<span class="btn btn-outline-info">';
+        listproduct += '<a href="detail.html">DT</a> ';
+        listproduct += '</span>';
         listproduct += '</div>';
         listproduct += '</div>';
 
         document.getElementById("banchay").innerHTML += listproduct;
-       }
-       Save();
-       
-   }
+    }
+    Save();
+}
+
+// Function to display an alert with the product name
+function tks(productName) {
+    alert('' + productName + ' đã được đặt !');
+}
 
 listLocal();
 
